@@ -6,7 +6,7 @@
 
 1. npm包安装
 
-```
+```bash
 npm install sf-express-sdk
 ```
 
