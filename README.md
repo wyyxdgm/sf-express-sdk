@@ -1,5 +1,21 @@
+# sf-express-sdk
 
-## 配置
+(顺丰快递接口)丰桥服务平台部分接口实现、npm package
+
+## 使用方法
+
+1. npm包安装
+
+```
+npm install sf-express-sdk
+```
+
+2. 在[丰桥官网](https://qiao.sf-express.com/)申请API接入，获取：客户编码、校验码、调用地址
+
+3. 覆盖代码中的 `<客户编码>`, `<校验码>`, `<调用地址>`
+
+## coding 示例
+### 配置
 ```
 /**
  * @apiDescription 创建SF
@@ -17,7 +33,7 @@ const sf = new SF({
 });
 ```
 
-## 下单
+### 下单
 
 ```
 /**
@@ -92,7 +108,7 @@ sf.OrderService(createOrderOpts).then(function(result) {
 })
 ```
 
-## 订单过滤
+### 订单过滤
 
 ```
 /**
@@ -120,7 +136,7 @@ sf.OrderFilterService(filterOpts).then(function(result){
 })
 ```
 
-## 订单查询
+### 订单查询
 
 ```
 /**
@@ -148,7 +164,7 @@ sf.OrderSearchService("0002").then(function(result) {
 })
 ```
 
-## 路由信息查询（根据顺丰运单号）
+### 路由信息查询（根据顺丰运单号）
 
 ```
 /**
@@ -185,7 +201,7 @@ sf.RouteService('444010688260').then(function(result) {
 })
 ```
 
-## 路由信息查询（根据客户订单号）
+### 路由信息查询（根据客户订单号）
 
 ```
 /**
