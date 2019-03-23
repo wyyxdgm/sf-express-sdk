@@ -197,7 +197,7 @@ const sf = new SF({
  *
  */
 
-// 路由信息查询-根据客户订单号
+// // 路由信息查询-根据客户订单号
 // sf.RouteServiceByOrderId('0002').then(function(result) {
 // 	console.log(JSON.stringify(result))
 // }).catch(function(err) {
@@ -217,15 +217,15 @@ const sf = new SF({
  *
  */
 
-// 订单取消
-sf.OrderConfirmService({
-	orderid: '0002',
-	dealtype: 2
-}).then(function(result) {
-	console.log(JSON.stringify(result))
-}).catch(function(err) {
-	console.log(err)
-})
+// // 订单取消
+// sf.OrderConfirmService({
+// 	orderid: '0002',
+// 	dealtype: 2
+// }).then(function(result) {
+// 	console.log(JSON.stringify(result))
+// }).catch(function(err) {
+// 	console.log(err)
+// })
 
 /**
  * @apiDescription 取消订单
