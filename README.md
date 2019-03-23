@@ -14,9 +14,38 @@ npm install sf-express-sdk
 
 3. 覆盖代码中的 `<客户编码>`, `<校验码>`, `<调用地址>`
 
-## coding 示例
+## API列表
+
+* [下单](#下单)
+
+		OrderService(<opt>)
+
+* [订单过滤](#订单过滤)
+
+		OrderFilterService(<opt>)
+
+* [订单查询](#订单查询)
+
+		OrderSearchService(<orderid>)
+
+* [路由信息查询（根据顺丰运单号）](#路由信息查询（根据顺丰运单号）)
+
+		RouteService({tracking_number: <mailno>, tracking_type:1, method_type:1})
+
+* [路由信息查询（根据客户订单号）](#路由信息查询（根据客户订单号）)
+
+		RouteServiceByOrderId(<orderid>)
+
+* [取消订单](#取消订单)
+
+		OrderConfirmServiceCancel(<orderid>)
+
+		OrderConfirmService({orderid: <orderid>, dealtype: 2})
+
+<div id="配置"></div>
 ### 配置
-```
+
+```js
 /**
  * @apiDescription 创建SF
  * @apiName new SF
@@ -32,10 +61,10 @@ const sf = new SF({
 	url: '<调用地址>'
 });
 ```
-
+<div id="下单"></div>
 ### 下单
 
-```
+```js
 /**
  * @apiDescription 下单
  * @apiName OrderService
@@ -107,10 +136,10 @@ sf.OrderService(createOrderOpts).then(function(result) {
 	console.log(err)
 })
 ```
-
+<div id="订单过滤"></div>
 ### 订单过滤
 
-```
+```js
 /**
  * @apiDescription 订单过滤
  * @apiName OrderFilterService
@@ -135,10 +164,10 @@ sf.OrderFilterService(filterOpts).then(function(result){
  console.log(err)
 })
 ```
-
+<div id="订单查询"></div>
 ### 订单查询
 
-```
+```js
 /**
  * @apiDescription 订单查询
  * @apiName OrderSearchService
@@ -157,19 +186,22 @@ sf.OrderFilterService(filterOpts).then(function(result){
  *   {"code":"6150","text":"找不到该订单"}
  */
 
-sf.OrderSearchService("0002").then(function(result) {
+sf.OrderSearchService('0002').then(function(result) {
 	console.log(JSON.stringify(result))
 }).catch(function(err) {
 	console.log(err)
 })
 ```
-
+<div id="路由信息查询（根据顺丰运单号）"></div>
 ### 路由信息查询（根据顺丰运单号）
 
-```
+```js
 /**
- * @apiDescription 路由信息查询（根据顺丰运单号）
+ * @apiDescription 路由信息查询
  * @apiName RouteService
+ * @apiParam {String} tracking_number 查询号
+ * @apiParam {Number} [tracking_type=1] 查询号类别:1：根据顺丰运单号查询;2：根据客户订单号查询;3：逆向单，根据客户原始订单号查询
+ * @apiParam {Number} [method_type=1] 路由查询类别1：标准路由查询;2：定制路由查询
  * @apiSuccessExample {json} Success-Response:
  *   {
  *   	"RouteResponse": {
@@ -194,16 +226,16 @@ sf.OrderSearchService("0002").then(function(result) {
  *
  */
 // 路由信息查询（根据顺丰运单号）
-sf.RouteService('444010688260').then(function(result) {
+sf.RouteService({tracking_number: '444010688260'}).then(function(result) {
 	console.log(JSON.stringify(result))
 }).catch(function(err) {
 	console.log(err)
 })
 ```
-
+<div id="路由信息查询（根据客户订单号）"></div>
 ### 路由信息查询（根据客户订单号）
 
-```
+```js
 /**
  * @apiDescription 路由信息查询（根据客户订单号）
  * @apiName RouteServiceByOrderId
@@ -237,4 +269,48 @@ sf.RouteServiceByOrderId('0002').then(function(result) {
 	console.log(err)
 })
 ```
+<div id="取消订单"></div>
+### 取消订单
 
+```js
+/**
+ * @apiDescription 订单取消
+ * @apiName OrderConfirmService
+ * @apiParam {String} orderid 客户订单号
+ * @apiParam {Number} dealtype 客户订单操作标识：1：确认；2：取消
+ * @apiSuccessExample {json} Success-Response:
+ * {"OrderConfirmResponse":{"res_status":"2","orderid":"0002"}}
+ *
+ * @apiErrorExample {json} Error-Response:
+ *   {"code":"8019","text":"订单已确认或已消单"}
+ *
+ */
+
+sf.OrderConfirmService({
+	orderid: '0002',
+	dealtype: 2
+}).then(function(result) {
+	console.log(JSON.stringify(result))
+}).catch(function(err) {
+	console.log(err)
+})
+```
+```js
+/**
+ * @apiDescription 取消订单
+ * @apiName OrderConfirmServiceCancel
+ * @apiParam {String} orderid 客户订单号
+ * @apiSuccessExample {json} Success-Response:
+ *   {"OrderConfirmResponse":{"res_status":"2","orderid":"0002"}}
+ *
+ * @apiErrorExample {json} Error-Response:
+ *   { code: '0012', text: '参数错误:orderid=' }
+ *
+ */
+
+sf.OrderConfirmServiceCancel('0002').then(function(result) {
+	console.log(JSON.stringify(result))
+}).catch(function(err) {
+	console.log(err)
+})
+```

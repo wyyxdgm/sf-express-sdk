@@ -164,7 +164,7 @@ const sf = new SF({
  */
 
 // // 路由信息查询（根据顺丰运单号）
-// sf.RouteService('444010688260').then(function(result) {
+// sf.RouteService({tracking_number: '444010688260'}).then(function(result) {
 // 	console.log(JSON.stringify(result))
 // }).catch(function(err) {
 // 	console.log(err)
@@ -198,8 +198,49 @@ const sf = new SF({
  */
 
 // 路由信息查询-根据客户订单号
-sf.RouteServiceByOrderId('0002').then(function(result) {
+// sf.RouteServiceByOrderId('0002').then(function(result) {
+// 	console.log(JSON.stringify(result))
+// }).catch(function(err) {
+// 	console.log(err)
+// })
+
+/**
+ * @apiDescription 订单取消
+ * @apiName OrderConfirmService
+ * @apiParam {String} orderid 客户订单号
+ * @apiParam {Number} dealtype 客户订单操作标识：1：确认；2：取消
+ * @apiSuccessExample {json} Success-Response:
+ * {"OrderConfirmResponse":{"res_status":"2","orderid":"0002"}}
+ *
+ * @apiErrorExample {json} Error-Response:
+ *   {"code":"8019","text":"订单已确认或已消单"}
+ *
+ */
+
+// 订单取消
+sf.OrderConfirmService({
+	orderid: '0002',
+	dealtype: 2
+}).then(function(result) {
 	console.log(JSON.stringify(result))
 }).catch(function(err) {
 	console.log(err)
 })
+
+/**
+ * @apiDescription 取消订单
+ * @apiName OrderConfirmServiceCancel
+ * @apiParam {String} orderid 客户订单号
+ * @apiSuccessExample {json} Success-Response:
+ *   {"OrderConfirmResponse":{"res_status":"2","orderid":"0002"}}
+ *
+ * @apiErrorExample {json} Error-Response:
+ *   { code: '0012', text: '参数错误:orderid=' }
+ *
+ */
+// 取消订单
+// sf.OrderConfirmServiceCancel('0002').then(function(result) {
+// 	console.log(JSON.stringify(result))
+// }).catch(function(err) {
+// 	console.log(err)
+// })
