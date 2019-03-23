@@ -1,12 +1,20 @@
 
 ## 配置
 ```
-const SF = require('sf-express');
+/**
+ * @apiDescription 创建SF
+ * @apiName new SF
+ *
+ * @apiParam {String} clientCode 客户编码
+ * @apiParam {String} checkWord 校验码
+ * @apiParam {String} [url=http://bsp-oisp.sf-express.com/bsp-oisp/sfexpressService] 调用地址
+ * @type {SF}
+ */
+const SF = require('sf-express-sdk');
 const sf = new SF({
-	checkHeader: 'DGM',
-	checkBody: 'ceNuNyP3jZ3COOm8Jh4oVQkuMNWcAhhG',
-	url: 'http://bsp-oisp.sf-express.com',
-	path: '/bsp-oisp/sfexpressService'
+	clientCode: 'DGM',
+	checkWord: 'ceNuNyP3jZ3COOm8Jh4oVQkuMNWcAhhG',
+	url: 'http://bsp-oisp.sf-express.com/bsp-oisp/sfexpressService'
 });
 ```
 

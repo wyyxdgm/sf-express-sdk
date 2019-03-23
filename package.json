@@ -1,25 +1,28 @@
 {
-  "name": "sf-express",
-  "version": "2.0.0",
-  "description": "sf-express api",
+  "name": "sf-express-sdk",
+  "version": "1.0.0",
+  "description": "sf-express sdk",
   "main": "index.js",
   "scripts": {
     "test": "./node_modules/.bin/mocha"
   },
   "repository": {
     "type": "git",
-    "url": "git+ssh://git@github.com/wyyxdgm/sf-express.git"
+    "url": "git+ssh://git@github.com/wyyxdgm/sf-express-sdk.git"
   },
   "keywords": [
     "sf",
-    "express"
+    "express",
+    "sdk",
+    "sf-express",
+    "sf-express-sdk"
   ],
   "author": "wyyxdgm",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/wyyxdgm/sf-express/issues"
+    "url": "https://github.com/wyyxdgm/sf-express-sdk/issues"
   },
-  "homepage": "https://github.com/wyyxdgm/sf-express#readme",
+  "homepage": "https://github.com/wyyxdgm/sf-express-sdk#readme",
   "dependencies": {
     "chai": "^4.0.2",
     "lodash": "^4.17.4",
