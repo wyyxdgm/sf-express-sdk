@@ -18,7 +18,6 @@ const sf = new SF({
  * @apiDescription 下单
  * @apiName OrderService
  * @apiSuccessExample {json} Success-Response:
- *   HTTP/1.1 200 OK
  *   {
  *   	"OrderResponse": {
  *   		"filter_result": "2",
@@ -53,7 +52,6 @@ const sf = new SF({
  *   }
  *
  * @apiErrorExample {json} Error-Response:
- *   HTTP/1.1 200 OK
  *   { code: '8119', text: '月结卡号不存在或已失效' }
  */
 
@@ -92,11 +90,9 @@ const sf = new SF({
  * @apiDescription 订单过滤
  * @apiName OrderFilterService
  * @apiSuccessExample {json} Success-Response:
- *   HTTP/1.1 200 OK
  *   {"OrderFilterResponse":{"filter_result":"1","orderid":"0002"}}
  *
  * @apiErrorExample {json} Error-Response:
- *   HTTP/1.1 200 OK
  *   {"code":"8028","text":"客户未配置此业务"}
  */
 
@@ -119,7 +115,6 @@ const sf = new SF({
  * @apiDescription 订单查询
  * @apiName OrderSearchService
  * @apiSuccessExample {json} Success-Response:
- *   HTTP/1.1 200 OK
  *   {
  *   	"OrderResponse": {
  *   		"filter_result": "2",
@@ -131,7 +126,6 @@ const sf = new SF({
  *   }
  *
  * @apiErrorExample {json} Error-Response:
- *   HTTP/1.1 200 OK
  *   {"code":"6150","text":"找不到该订单"}
  */
 
@@ -146,7 +140,6 @@ const sf = new SF({
  * @apiDescription 路由信息查询（根据顺丰运单号）
  * @apiName RouteService
  * @apiSuccessExample {json} Success-Response:
- *   HTTP/1.1 200 OK
  *   {
  *   	"RouteResponse": {
  *   		"mailno": "444010688260",
@@ -166,7 +159,6 @@ const sf = new SF({
  *   }
  *
  * @apiErrorExample {json} Error-Response:
- *   HTTP/1.1 200 OK
  *   { code: '0001', text: '客户订单号不能为空' }
  *
  */
@@ -182,7 +174,6 @@ const sf = new SF({
  * @apiDescription 路由信息查询（根据客户订单号）
  * @apiName RouteServiceByOrderId
  * @apiSuccessExample {json} Success-Response:
- *   HTTP/1.1 200 OK
  *   {
  *   	"RouteResponse": {
  *   		"mailno": "444010688260",
@@ -202,7 +193,6 @@ const sf = new SF({
  *   }
  *
  * @apiErrorExample {json} Error-Response:
- *   HTTP/1.1 200 OK
  *   { code: '0002', text: '顺丰运单号不能为空' }
  *
  */
