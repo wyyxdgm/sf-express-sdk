@@ -8,13 +8,12 @@
  * @apiParam {String} clientCode 客户编码
  * @apiParam {String} checkWord 校验码
  * @apiParam {String} [url=http://bsp-oisp.sf-express.com/bsp-oisp/sfexpressService] 调用地址
- * @type {SF}
  */
 const SF = require('sf-express-sdk');
 const sf = new SF({
-	clientCode: 'DGM',
-	checkWord: 'ceNuNyP3jZ3COOm8Jh4oVQkuMNWcAhhG',
-	url: 'http://bsp-oisp.sf-express.com/bsp-oisp/sfexpressService'
+	clientCode: '<客户编码>',
+	checkWord: '<校验码>',
+	url: '<调用地址>'
 });
 ```
 
