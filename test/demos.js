@@ -55,36 +55,36 @@ const sf = new SF({
  *   { code: '8119', text: '月结卡号不存在或已失效' }
  */
 
-//// 下单
-// const createOrderOpts = {
-// 	"orderid": "0002",
-// 	"express_type": "1",
-// 	"j_company": "西瓜の公司",
-// 	"j_contact": "大西瓜",
-// 	"j_tel": "15842345665",
-// 	"j_province": "山东省",
-// 	"j_city": "青岛市",
-// 	"j_qu": "崂山区",
-// 	"j_address": "丽达广场对面",
-// 	"d_company": "菠萝の公司",
-// 	"d_contact": "大菠萝",
-// 	"d_tel": "15544456578",
-// 	"d_province": "山东省",
-// 	"d_city": "临沂市",
-// 	"d_qu": "兰山区",
-// 	"d_address": "金雀山路齐鲁大厦",
-// 	"pay_method": "1",
-// 	"custid": "7551234567",
-// 	"daishou": "0",
-// 	"things": "小笼包",
-// 	"things_num": "1",
-// 	"remark": "精密仪器，小心轻拿轻放~",
-// }
-// sf.OrderService(createOrderOpts).then(function(result) {
-// 	console.log(JSON.stringify(result))
-// }).catch(function(err) {
-// 	console.log(err)
-// })
+// 下单
+const createOrderOpts = {
+	"orderid": "0006",
+	"express_type": "1",
+	"j_company": "西瓜の公司",
+	"j_contact": "大西瓜",
+	"j_tel": "15842345665",
+	"j_province": "山东省",
+	"j_city": "青岛市",
+	"j_qu": "崂山区",
+	"j_address": "丽达广场对面",
+	"d_company": "菠萝の公司",
+	"d_contact": "大菠萝",
+	"d_tel": "15544456578",
+	"d_province": "山东省",
+	"d_city": "临沂市",
+	"d_qu": "兰山区",
+	"d_address": "金雀山路齐鲁大厦",
+	"pay_method": "1",
+	"custid": "7551234567",
+	"daishou": "0",
+	"things": "小笼包",
+	"things_num": "1",
+	"remark": "精密仪器，小心轻拿轻放~"
+}
+sf.OrderService(createOrderOpts).then(function(result) {
+	console.log(JSON.stringify(result))
+}).catch(function(err) {
+	console.log(err)
+})
 
 /**
  * @apiDescription 订单过滤
