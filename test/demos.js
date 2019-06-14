@@ -55,9 +55,11 @@ const sf = new SF({
  *   { code: '8119', text: '月结卡号不存在或已失效' }
  */
 
-//// 下单
+// 下单
 // const createOrderOpts = {
 // 	"orderid": "0002",
+// 	"is_docall": 1,
+// 	"sendstarttime": "2019-06-14 11:30:00",
 // 	"express_type": "1",
 // 	"j_company": "西瓜の公司",
 // 	"j_contact": "大西瓜",

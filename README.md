@@ -110,6 +110,8 @@ const sf = new SF({
 
 const createOrderOpts = {
 	"orderid": "0002",
+	"is_docall": 1,
+	"sendstarttime": "2019-06-14 11:30:00",
 	"express_type": "1",
 	"j_company": "西瓜の公司",
 	"j_contact": "大西瓜",
